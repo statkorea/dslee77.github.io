@@ -1,6 +1,6 @@
 export default (() => {
 	//const HOST = "http://localhost:8080";
-	const HOST = "http://58.231.219.214:8080";
+	const HOST = "https://phylip.modoree.kr";
 
 	// command DIV 추가
 	function add_cmd(_cmd, popper) {
