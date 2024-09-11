@@ -1,0 +1,128 @@
+#modal-body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    overflow: auto
+}
+
+#modal-body {
+	pointer-events: none;
+	background-color: hsla(0,0%,7%,0)
+}
+
+#modal-body #modal-app {
+	opacity: 0;
+	pointer-events: none
+}
+
+#modal-body.visible {
+    pointer-events: all;
+    background-color: hsla(0,0%,7%,.7);
+}
+
+#modal-body.visible #modal-app {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+#modal-app {
+    background-color: #fff;
+    width: 930px;
+    min-width: 900px;
+    border-radius: 10px;
+    height: 90vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 90px 1fr;
+    transition-property: opacity,transform;
+    transition-duration: .12s;
+    transition-timing-function: ease-out;
+    transform: scale(.98)
+}
+
+#modal-app.noHeader {
+    grid-template-rows: 1fr
+}
+
+#modal-app #close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 35px;
+    width: 35px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px
+}
+
+#modal-app #close-modal:hover {
+    background-color: rgba(0,0,0,.05);
+    text-decoration: none
+}
+
+#modal-app #close-modal:active {
+    background-color: rgba(0,0,0,.1)
+}
+
+#modal-body.unblockRequest #modal-content {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    overflow: auto
+}
+
+#modal-body.unblockRequest #modal-content main {
+    padding: 0 20px;
+    overflow: auto
+}
+
+#modal-body.unblockRequest #modal-content aside {
+    padding: 0 20px;
+    background: rgba(0,0,0,.05);
+    box-sizing: border-box
+}
+
+#modal-body.unblockRequest #modal-app {
+    width: 950px;
+    min-width: 850px;
+}
+
+#modal-body.unblockRequest #modal-app #modal-content {
+    display: grid
+}
+
+#modal-body.unblockRequest #modal-app #modal-content .perks {
+    margin-bottom: 10px;
+    margin-top: 10px;
+	list-style-type: none;
+	padding-inline-start: 0px;
+}
+
+#modal-body.unblockRequest #modal-app #modal-content .perks li {
+    margin: 50px 0px;
+}
+
+#modal-body.unblockRequest #modal-app aside {
+    display: flex;
+    align-items: start;
+}
+#modal-body.unblockRequest #modal-app aside h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+	font-family: math;
+}
+
+#modal-body.unblockRequest #modal-app aside p {
+    opacity: .6;
+    line-height: 1.3rem;
+	font-family: serif;
+}

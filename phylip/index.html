@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>PHYLIP online</title>
+
+<meta property="og:title" content="PHYLIP online" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://dslee77.github.io/" />
+<meta property="og:url" content="https://dslee77.github.io/" />
+
+<meta property="og:site_name" content="dslee77" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PHYLIP online" />
+
+<script type="application/ld+json">
+	{
+	"@context":"https://schema.org",
+	"@type":"WebSite",
+	"headline":"dslee77.github.io",
+	"name":"PHYLIP online",
+	"url":"https://dslee77.github.io/"
+	}
+</script>
+
+<!-- End Jekyll SEO tag -->
+
+<!-- Setup Google Analytics -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://zoltantothcom.github.io/vanilla-js-tabs/styles/vanilla-js-tabs.css" />
+<script src="https://zoltantothcom.github.io/vanilla-js-tabs/javascript/vanilla-js-tabs.min.js"></script>
+
+<link rel="stylesheet" href="./modal.css" />
+<link rel="stylesheet" href="./slide.css" />
+<link rel="stylesheet" href="./base.css" />
+
+</head>
+
+<body>
+	<div id="header">
+		<h1>PHYLIP online</h1>
+	</div>
+	<div id="cmd-zone">
+		<ul class="grid"></ul>
+	</div>
+
+	<div id="modal-body" class="unblockRequest">
+		<div id="modal-app" class="noHeader">        
+			<div id="modal-content">
+				<main id="pbase">
+					<h1 id="cmd"></h1>
+					
+					<section data-page="s1" id="s1" class="active">
+						<h3>Input Data:</h3>
+						<span id="xtra">
+							<input id="add_extra" class="ifield" placeholder="Enter extra filename to add input box" />
+						</span>
+						<div class="js-tabs" id="tabs-input">
+							<ul class="js-tabs__header"></ul>
+						</div>		
+						<div class="btn">
+							<a href="" id="sample" class="btn-s1">Use sample</a>
+							<a href="#s2" data-role="link" data-type="ignite" class="btn-p1">GO</a>
+						</div>
+					</section>
+								  
+					<section data-page="s2" id="s2">
+						<h3>Set Options and Execute:</h3>
+						<div>
+							<pre id="screen"></pre>
+							<hr class="divide" />
+							<div id="interact">
+								# <input class="ifield" id="key_in" focus /><i id="go" class="fa-solid fa-person-running"></i>
+							</div>
+						</div>
+						<div class="btn">
+							<a href="#s1" data-role="link" class="btn-s1">Restart</a>
+							<a href="#s3" data-role="link" class="btn-p1">View result</a>
+						</div>
+					</section>
+					<section data-page="s3" id="s3">
+						<h3>Check Result:</h3>
+						<div id="mesg"></div>
+						<table id="option"></table>
+						
+						<hr class="divide" />
+						<div class="js-tabs" id="tabs-output">
+							<ul class="js-tabs__header"></ul>
+						</div>		
+						<div class="btn">
+							<a href="#s1" data-role="link" class="btn-s1">Restart</a>
+							<a href="#s2" data-role="link" data-type="asis" class="btn-s1">Change option</a>
+						</div>
+					</section>
+				</main>
+
+				<aside>
+					<ul class="perks">
+						<li>
+							<section>
+								<h3>Input data.</h3>
+								<p>Before setting options, input data has to be set with sample or yours.</p>
+							</section>
+						</li>
+						<li>
+							<section>
+								<h3>Set options & execute.</h3>
+								<p>Like <span title="Command Line Interface">CLI</span>, You type alphabet or number to set options. Command is executed as soon as you confirm the option with "Y" or following input.</p>
+							</section>
+						</li>
+						<li>
+							<section>
+								<h3>Check result.</h3>
+								<p>Check the result executed. You can restart if does not fit your expectation.</p>
+							</section>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<a id="close-modal" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke-linecap="round" class="nc-icon-wrapper" fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round"><path d="M18 6L6 18"></path><path d="M6 6l12 12"></path></g></svg></a>
+		</div>
+	</div>
+</body>
+
+<script type="module">
+import init from './init.js';
+import _item from './item.js';
+
+const item = _item(init.HOST);
+
+//close
+document.querySelector("#close-modal").addEventListener("click", e => {
+	item.clear();
+	document.querySelector("#modal-body").classList.remove("visible");
+});
+
+//add extra input field
+document.querySelector("#add_extra").addEventListener("keyup", e => {
+	if (e.keyCode == 13) {
+		item.add_input(e.target.value.trim());
+		e.target.value = "";
+	}
+});
+
+//load sample
+document.querySelector("#sample").addEventListener("click", e => item.load_sample(e));
+
+//load commands
+init.load_cmds(item);
+</script>
+</html>
+

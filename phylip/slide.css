@@ -1,0 +1,113 @@
+pre {
+	font-size: .5rem;
+}
+[data-page] {	
+    position:fixed; /* or absolute if the content exceeds the height of the page */
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+    transition: transform 0.4s ease-in, opacity 0.1s ease-in; 
+}
+[data-page].active{
+    position:relative;
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+	overflow: hidden;
+	width: 100%;
+}
+[data-role="link"]{
+    opacity: 1;
+}
+.btn {
+    padding: 1em 0em;
+}
+h1 {
+	text-align: center;
+}
+.js-tabs {
+	margin: 10px 0px;
+}
+#screen, #option {
+	font-size: 1em;
+	font-family: monospace;
+	width: 100%;
+	max-height: 35vh;
+    overflow: auto;
+	padding: 10px 5px;
+	background-color: white;
+	color: black;
+}
+
+#screen.error {
+	background-color: coral;
+	color: cornsilk;
+}
+
+.js-tabs__title {
+	margin-right: 0.1em;
+	padding: .3em .7em;
+}
+.input_box {
+	height: 60vh;
+	padding: .3em;
+}
+.input_box textarea {
+    width: 100%;
+    height: 93%;
+    border: 0px;
+	resize: none;
+}
+.file {
+	margin-top: 10px;
+}
+.divide, #interact {
+	margin: 15px 0px;
+}
+.cmd_result {
+	font-size: .9em;
+    overflow-y: auto;
+    height: 200px;
+}
+i.fa-solid {
+	margin-left: 10px;
+}
+#pbase {
+	z-index: 999;
+}
+#xtra {
+	float: right;
+}
+.btn-s1 {
+    background-color: darkcyan;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+}
+.btn-p1 {
+    background-color: brown;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+}
+
+.ifield {
+    border:none;
+    border-bottom: 1px solid #aaa;
+    padding: 5px 10px;
+    outline: none;
+	width: 250px;
+	text-align: right;
+ }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: 100%;
+    opacity: 1;
+}
+#go {
+	font-size: 15pt;
+}
+#key_in {
+	width: 100px;
+}
