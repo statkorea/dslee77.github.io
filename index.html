@@ -34,13 +34,40 @@
 	<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
 
 	<!-- end custom head snippets -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3870613659210160"
+     crossorigin="anonymous"></script>
+	 
+	<style>
+	.container {
+		flex-direction: row;
+		display: flex;
+		align-content: flex-start;
+		flex-wrap: wrap;
+	}
+	.item {
+		flex-direction: column;
+		display: flex;
+		flex-basis: 100px;
+		align-items: center;
+		padding: 20px;
+	}
+	.item > span {
+		font-size: 1.3em;
+		font-family: verdana;
+	}
+	</style>
 </head>
 <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-		<a href="/phylip/index.html">
-			<img src="./img/phylip.gif" alt="PHYLIP"></img>
-			<h1>PHYLIP</h1>
+	<div class="container-lg px-3 my-5">
+		<a href="/phylip/index.html" class="item">
+			<img src="./img/phylip.gif" alt="PHYLIP">
+			<span>PHYLIP</span>
 		</a>
-    </div>
+		
+		<a href="/nextstrain/index.html" class="item" style="display:none">
+			<img src="./img/nextstrain.jpg" alt="Nextstrain">
+			<span>NEXTSTRAIN BUILD</span>
+		</a>		
+	</div>
 </body>
 </html>
